@@ -1,0 +1,44 @@
+Given two numbers, print maximum of two numbers.z
+
+Input Format
+
+A B - Two space separated integers on one line.
+
+Constraints
+
+-1018 <= A, B <= 1018
+
+Output Format
+
+Print maximum of A and B.
+
+Sample Input 0
+
+4 5
+Sample Output 0
+
+5
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+    
+
+    public static void main(String[] args)
+    {
+        Scanner S=new Scanner(System.in);
+        long A,B;
+        A=S.nextLong();
+        B=S.nextLong();
+       if(A>B)
+       {
+         System.out.println(A) ;
+       }
+        else
+        {
+            System.out.println(B);
+        }
+        
+    }
+}
