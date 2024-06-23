@@ -1,0 +1,54 @@
+Given a number N, write a program to find the Nth term of the below-mentioned series. 14, 28, 20, 40, 32, 64, 56, 112, 104, 208.....
+
+Input Format
+
+Read n value
+
+Constraints
+
+1<=n<=10000
+
+Output Format
+
+Print nth term
+
+Sample Input 0
+
+2
+Sample Output 0
+
+28
+Sample Input 1
+
+10
+Sample Output 1
+
+208
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int findNth(int N) 
+{
+    int t=14;
+    for(int i=2;i<=N;i++)
+    {
+        if(i%2==0)
+        {
+            t*=2;
+        } 
+        else
+        {
+            t-=8;
+        }
+    }
+    return t;
+}
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    printf("%d\n",findNth(N));
+    return 0;
+}
