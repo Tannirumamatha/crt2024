@@ -1,0 +1,74 @@
+Write a program to check whether the given number is an Armstrong number or not. Armstrong Number:abcd... = pow(a,n) + pow(b,n) + pow(c,n) + pow(d,n) + .... where n represents the number of digits
+
+Input Format
+
+Read a no
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print "Yes" if armstrong no else print "No"
+
+Sample Input 0
+
+153
+Sample Output 0
+
+Yes
+Sample Input 1
+
+120
+Sample Output 1
+
+No
+Sample Input 2
+
+1253
+Sample Output 2
+
+No
+Sample Input 3
+
+1634
+Sample Output 3
+
+Yes
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        boolean isArmstrong = checkArmstrong(n);
+        if (isArmstrong)
+        {
+            System.out.println("Yes");
+        }
+        else
+        {
+            System.out.println("No");
+        }
+    }
+
+    public static boolean checkArmstrong(int num) 
+    {
+        int originalNumber=num;
+        int sum = 0;
+        int numDigits = String.valueOf(num).length();
+        while(num>0) 
+        {
+            int digit=num%10;
+            sum+=Math.pow(digit,numDigits);
+            num/=10;
+        }
+
+        return sum==originalNumber;
+    }
+}
