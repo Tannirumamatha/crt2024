@@ -1,0 +1,64 @@
+Write a program to find the sum of factorial of each digit in the given number.
+
+Input Format
+
+Read a number
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print output
+
+Sample Input 0
+
+56
+Sample Output 0
+
+840
+Sample Input 1
+
+98427
+Sample Output 1
+
+408266
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+unsigned long long factorial(int n) 
+{
+    if(n==0||n==1)
+    {
+        return 1;
+    }
+    else 
+    {
+        unsigned long long r=1;
+        for (int i=2;i<=n;i++)
+        {
+            r*=i;
+        }
+        return r;
+    }
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int temp=n;
+    unsigned long long sum=0;
+    while(temp>0)
+    {
+        int digit = temp % 10;
+        sum+=factorial(digit);
+        temp/=10;
+    }
+    printf("%llu\n", sum);
+    return 0;
+}
+
