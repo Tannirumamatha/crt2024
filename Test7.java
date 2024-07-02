@@ -1,0 +1,38 @@
+import java.util.*;
+class Test8
+{
+public static void main(String[] args)
+{
+	Scanner s=new Scanner(System.in);
+	int n=s.nextInt();
+	int a[]=new int[n];
+	for(int i=0;i<n-1;i++)
+	{
+		a[i]=s.nextInt();
+	}
+	int mid;
+	if(n%2==0)
+		mid=n/2;
+	else
+		mid=n/2+1;
+	for(int i=0;i<mid-1;i++)
+	{
+		for(int j=i+1;j<mid;j++)
+		{
+			if(a[i]>a[j])
+			{
+				int t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+		}
+	}
+	int i;
+	for(int i=0;i<n/2;i++)
+	{
+	System.out.print(a[n-i-1]+" "+a[i]+" ");
+	}
+	if(n%2==1)
+		System.out.print(a[i]);
+}
+}
